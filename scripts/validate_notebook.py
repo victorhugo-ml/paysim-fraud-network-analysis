@@ -25,12 +25,17 @@ REQUIRED_IMAGES = (
 REQUIRED_TEXT = (
     "Pergunta de pesquisa",
     "Limitação metodológica essencial",
+    "Transparência sobre assistência de IA",
     "Resultados empíricos desta execução",
-    "Como apresentar este projeto",
+    "Síntese metodológica",
 )
 
 FORBIDDEN_PATTERNS = {
     "portfolio placeholder": re.compile(r"preencher após executar", re.I),
+    "internal presentation note": re.compile(
+        r"como apresentar este projeto|vídeo|versão anterior|execução anterior|use estes resultados",
+        re.I,
+    ),
     "Windows user path": re.compile(r"[A-Z]:\\\\Users\\\\", re.I),
     "Unix user path": re.compile(r"/(?:home|Users)/[^/\s]+/"),
     "credential assignment": re.compile(

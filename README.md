@@ -159,4 +159,4 @@ Consulte [`DATASET.md`](DATASET.md) para detalhes de uso e atribuição.
 
 ## Contexto
 
-Projeto acadêmico e de portfólio desenvolvido de forma iterativa, com uso de ferramentas de IA para apoiar revisão, documentação e aprofundamento conceitual. A metodologia, as limitações e os resultados foram mantidos explícitos para que a análise possa ser explicada e questionada tecnicamente.
+Projeto acadêmico e de portfólio desenvolvido de forma iterativa. Ferramentas de IA generativa apoiaram a revisão editorial, a organização da documentação e a checagem conceitual. A definição do problema, as decisões metodológicas, a execução do código, a interpretação dos resultados e a responsabilidade pelo conteúdo permanecem do autor. Nenhum resultado quantitativo foi gerado ou estimado por IA.
