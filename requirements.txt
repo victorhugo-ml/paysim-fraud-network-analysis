@@ -1,0 +1,10 @@
+duckdb>=1.0,<2
+ipykernel>=6,<8
+ipython>=8,<10
+jupyterlab>=4,<5
+kagglehub>=0.3,<1
+matplotlib>=3.8,<4
+networkx>=3.3,<4
+numpy>=1.26,<3
+pandas>=2.2,<3
+scipy>=1.11,<2

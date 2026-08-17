@@ -1,0 +1,24 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Dataset and generated artifacts
+data/
+*.csv
+*.parquet
+*.duckdb
+*.db
+*.gexf
+*.graphml
+
+# Local environment and editors
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
