@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/victorhugo-ml/paysim-fraud-network-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/victorhugo-ml/paysim-fraud-network-analysis/actions/workflows/ci.yml)
 
-Análise exploratória de transações financeiras sintéticas usando **DuckDB**, **pandas** e grafos direcionados com **NetworkX**.
+Análise exploratória de transações financeiras sintéticas com **DuckDB/SQL**, **Pandas**, **NumPy**, visualizações em **Matplotlib** e grafos direcionados com **NetworkX**.
 
 O projeto investiga a seguinte pergunta:
 
@@ -22,7 +22,7 @@ Uma amostra aleatória pequena poderia eliminar recorrências, caminhos e hubs r
 - vizinhanças das contas selecionadas;
 - transações normais para completar a amostra.
 
-O **DuckDB** consulta o CSV completo com SQL sem carregá-lo integralmente em um DataFrame. Depois da amostragem, **pandas** trata os dados e o **NetworkX** modela cada conta como nó e cada transação como aresta direcionada.
+O **DuckDB** consulta o CSV completo com SQL sem carregá-lo integralmente em um DataFrame. Depois da amostragem, **Pandas** organiza os dados, **NumPy** apoia os cálculos numéricos, **NetworkX** modela a rede e **Matplotlib** produz as visualizações da análise.
 
 ```text
 PaySim completo
@@ -33,12 +33,14 @@ DuckDB + SQL
       v
 Amostragem estrutural (1.000 transações)
       |
-      +--> pandas / análise exploratória
+      +--> Pandas + NumPy / análise exploratória
       |
       +--> NetworkX / métricas e subgrafos
       |
+      +--> Matplotlib / visualizações
+      |
       v
-Resultados, visualizações e exportação para Gephi
+Resultados e exportação para Gephi
 ```
 
 ## Principais resultados
