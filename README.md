@@ -158,7 +158,3 @@ O PaySim é um dataset sintético gerado por um simulador de transações de mob
 - E. A. Lopez-Rojas, A. Elmir e S. Axelsson. *PaySim: A financial mobile money simulator for fraud detection*. EMSS, 2016.
 
 Consulte [`DATASET.md`](DATASET.md) para detalhes de uso e atribuição.
-
-## Contexto
-
-Projeto acadêmico e de portfólio desenvolvido de forma iterativa. Ferramentas de IA generativa apoiaram a revisão editorial, a organização da documentação e a checagem conceitual. A definição do problema, as decisões metodológicas, a execução do código, a interpretação dos resultados e a responsabilidade pelo conteúdo permanecem do autor. Nenhum resultado quantitativo foi gerado ou estimado por IA.
