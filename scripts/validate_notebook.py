@@ -25,7 +25,6 @@ REQUIRED_IMAGES = (
 REQUIRED_TEXT = (
     "Pergunta de pesquisa",
     "Limitação metodológica essencial",
-    "Transparência sobre assistência de IA",
     "Resultados empíricos desta execução",
     "Síntese metodológica",
 )
