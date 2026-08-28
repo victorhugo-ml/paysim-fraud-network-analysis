@@ -48,7 +48,7 @@ Resultados e exportação para Gephi
 | Indicador | Resultado |
 | --- | ---: |
 | Transações analisadas | 1.000 |
-| Períodos (`steps`) representados | 305 |
+| Períodos (`steps`) representados | 318 |
 | Fraudes selecionadas | 25 |
 | Nós | 1.780 |
 | Arestas agregadas | 1.000 |
@@ -62,8 +62,8 @@ Na amostra executada:
 
 - os 50 nós associados às fraudes selecionadas tiveram **in-degree médio de 1,88**, ante **0,52** nos demais nós;
 - o PageRank médio desses nós foi **0,000985**, ante **0,000550** nos demais;
-- o valor mediano das transações fraudulentas foi **722.832,95**, ante **96.824,08** nas transações normais;
-- a conta de origem terminou com saldo zero em **100%** das fraudes selecionadas, contra **24,82%** das demais transações.
+- o valor mediano das transações fraudulentas foi **722.832,95**, ante **101.598,47** nas transações normais;
+- a conta de origem terminou com saldo zero em **100%** das fraudes selecionadas, contra **24,00%** das demais transações.
 
 Essas diferenças são **exploratórias**. Elas não representam a população do PaySim e não demonstram capacidade preditiva.
 
