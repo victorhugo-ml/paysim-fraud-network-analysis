@@ -2,13 +2,17 @@
 
 [![CI](https://github.com/victorhugo-ml/paysim-fraud-network-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/victorhugo-ml/paysim-fraud-network-analysis/actions/workflows/ci.yml)
 
-Análise exploratória de transações financeiras sintéticas com **DuckDB/SQL**, **Pandas**, **NumPy**, visualizações em **Matplotlib** e grafos direcionados com **NetworkX**.
+Projeto exploratório de estudo com transações financeiras sintéticas, desenvolvido para praticar **DuckDB/SQL**, **Pandas**, **NumPy**, visualizações em **Matplotlib** e grafos direcionados com **NetworkX**.
+
+Este repositório registra meu processo de aprendizado. Ele não apresenta um sistema antifraude pronto: o objetivo é formular uma pergunta, construir uma amostra que permita estudar a rede e interpretar os resultados sem esconder as limitações.
 
 O projeto investiga a seguinte pergunta:
 
 > A estrutura de uma rede de transações financeiras permite identificar padrões associados às fraudes selecionadas?
 
 [Abrir o notebook executado](notebooks/paysim_fraud_network_analysis.ipynb)
+
+O notebook foi organizado para ser lido de cima para baixo. Os laços, filtros e etapas da amostragem foram mantidos visíveis, com comentários em linguagem direta, para que cada decisão possa ser acompanhada e explicada.
 
 ## Visão geral
 
