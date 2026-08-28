@@ -2,13 +2,17 @@
 
 [![CI](https://github.com/victorhugo-ml/paysim-fraud-network-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/victorhugo-ml/paysim-fraud-network-analysis/actions/workflows/ci.yml)
 
-Análise exploratória de transações financeiras sintéticas com **DuckDB/SQL**, **Pandas**, **NumPy**, visualizações em **Matplotlib** e grafos direcionados com **NetworkX**.
+Projeto exploratório de estudo com transações financeiras sintéticas, desenvolvido para praticar **DuckDB/SQL**, **Pandas**, **NumPy**, visualizações em **Matplotlib** e grafos direcionados com **NetworkX**.
+
+Este repositório registra meu processo de aprendizado. Ele não apresenta um sistema antifraude pronto: o objetivo é formular uma pergunta, construir uma amostra que permita estudar a rede e interpretar os resultados sem esconder as limitações.
 
 O projeto investiga a seguinte pergunta:
 
 > A estrutura de uma rede de transações financeiras permite identificar padrões associados às fraudes selecionadas?
 
 [Abrir o notebook executado](notebooks/paysim_fraud_network_analysis.ipynb)
+
+O notebook foi organizado para ser lido de cima para baixo. Os laços, filtros e etapas da amostragem foram mantidos visíveis, com comentários em linguagem direta, para que cada decisão possa ser acompanhada e explicada.
 
 ## Visão geral
 
@@ -48,7 +52,7 @@ Resultados e exportação para Gephi
 | Indicador | Resultado |
 | --- | ---: |
 | Transações analisadas | 1.000 |
-| Períodos (`steps`) representados | 305 |
+| Períodos (`steps`) representados | 318 |
 | Fraudes selecionadas | 25 |
 | Nós | 1.780 |
 | Arestas agregadas | 1.000 |
@@ -62,8 +66,8 @@ Na amostra executada:
 
 - os 50 nós associados às fraudes selecionadas tiveram **in-degree médio de 1,88**, ante **0,52** nos demais nós;
 - o PageRank médio desses nós foi **0,000985**, ante **0,000550** nos demais;
-- o valor mediano das transações fraudulentas foi **722.832,95**, ante **96.824,08** nas transações normais;
-- a conta de origem terminou com saldo zero em **100%** das fraudes selecionadas, contra **24,82%** das demais transações.
+- o valor mediano das transações fraudulentas foi **722.832,95**, ante **101.598,47** nas transações normais;
+- a conta de origem terminou com saldo zero em **100%** das fraudes selecionadas, contra **24,00%** das demais transações.
 
 Essas diferenças são **exploratórias**. Elas não representam a população do PaySim e não demonstram capacidade preditiva.
 
