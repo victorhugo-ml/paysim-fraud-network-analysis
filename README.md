@@ -4,6 +4,13 @@
 
 Projeto exploratório de estudo com transações financeiras sintéticas, desenvolvido para praticar **DuckDB/SQL**, **Pandas**, **NumPy**, visualizações em **Matplotlib** e grafos direcionados com **NetworkX**.
 
+Desenvolvido como projeto da disciplina **Comunicação e Redes**
+(BCM0506-15) do Bacharelado em Ciência e Tecnologia da UFABC, em 2026, e
+apresentado ao professor em vídeo. A ementa da disciplina cobre redes
+complexas, teoria dos grafos e propriedades estruturais de redes — o que
+explica por que a análise é conduzida como um problema de grafo e não como
+um problema tabular.
+
 Este repositório registra meu processo de aprendizado. Ele não apresenta um sistema antifraude pronto: o objetivo é formular uma pergunta, construir uma amostra que permita estudar a rede e interpretar os resultados sem esconder as limitações.
 
 O projeto investiga a seguinte pergunta:
