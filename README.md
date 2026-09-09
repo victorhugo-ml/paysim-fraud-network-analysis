@@ -78,6 +78,10 @@ Na amostra executada:
 
 Essas diferenças são **exploratórias**. Elas não representam a população do PaySim e não demonstram capacidade preditiva.
 
+O diagnóstico registrou **2 origens recorrentes**, **3 contas com entrada e saída** e **25 sequências direcionadas potenciais de duas arestas**. A seleção preservou algumas conexões, mas a rede permaneceu muito esparsa. Esses números não comprovam superioridade em relação a uma amostra aleatória nem garantem caminhos temporalmente válidos.
+
+O indicador de saldo considera uma origem com saldo inicial positivo que terminou em zero. Ele usa informação posterior à transação: em um modelo destinado a decidir antes de sua conclusão, seu uso representaria risco de vazamento temporal. Aqui, ele é usado apenas na análise retrospectiva da amostra.
+
 ## Visualizações
 
 <table>
@@ -144,6 +148,12 @@ jupyter lab
 ```
 
 Abra `notebooks/paysim_fraud_network_analysis.ipynb` e execute as células em ordem. O notebook baixa o PaySim por meio do `kagglehub`; o CSV não é versionado neste repositório.
+
+### Alcance da validação
+
+Execute `python scripts/validate_notebook.py` para verificar estrutura, sintaxe, ausência de erros salvos e arquivos de visualização. Essa é a mesma validação estática executada pela CI; ela **não baixa o dataset nem executa as células**, e não garante os resultados analíticos.
+
+O `requirements.txt` documenta faixas de versões compatíveis, não um ambiente com todas as versões fixadas. O notebook registra parte das versões da execução salva. Para confirmar a reprodução dos resultados, é necessário executar a análise completa no ambiente escolhido.
 
 ## Estrutura
 
