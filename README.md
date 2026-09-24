@@ -17,6 +17,14 @@ O projeto investiga a seguinte pergunta:
 
 > A estrutura de uma rede de transações financeiras permite identificar padrões associados às fraudes selecionadas?
 
+## Resultado principal
+
+- **A estrutura de rede quase não existe no próprio PaySim.** No dataset completo, com milhões de transações, apenas **2 contas de cliente** fazem mais de uma transação de saída e também recebem transferências. A amostragem estrutural não conseguiu preservar caminhos e recorrências porque o dado não os tem.
+- **O sinal mais forte é tabular — e é vazamento.** A conta de origem termina com saldo zero em 100% das fraudes selecionadas, contra 24% das demais transações; esse saldo só existe depois da transação, e em boa parte reflete a própria regra do simulador.
+- **Diferenças estruturais entre nós ligados a fraude e os demais são, em parte, efeito do desenho da amostra.**
+
+A lição que o projeto deixa: antes de escolher a ferramenta, verificar se o dado tem a estrutura que ela pressupõe. Análise de grafos pressupõe recorrência — e o PaySim quase não a tem.
+
 [Abrir o notebook executado](notebooks/paysim_fraud_network_analysis.ipynb)
 
 O notebook foi organizado para ser lido de cima para baixo. Os laços, filtros e etapas da amostragem foram mantidos visíveis, com comentários em linguagem direta, para que cada decisão possa ser acompanhada e explicada.
@@ -71,16 +79,15 @@ Resultados e exportação para Gephi
 
 Na amostra executada:
 
-- os 50 nós associados às fraudes selecionadas tiveram **in-degree médio de 1,88**, ante **0,52** nos demais nós;
-- o PageRank médio desses nós foi **0,000985**, ante **0,000550** nos demais;
+- os 50 nós associados às fraudes selecionadas tiveram **in-degree médio de 1,88**, ante **0,52** nos demais nós, e PageRank médio de **0,000985**, ante **0,000550** — mas cada conta de fraude recebeu até 4 transações vizinhas na amostragem, o que infla esses valores; a diferença é, ao menos em parte, produzida pelo desenho da amostra;
 - o valor mediano das transações fraudulentas foi **722.832,95**, ante **101.598,47** nas transações normais;
-- a conta de origem terminou com saldo zero em **100%** das fraudes selecionadas, contra **24,00%** das demais transações.
+- a conta de origem terminou com saldo zero em **100%** das fraudes selecionadas, contra **24,00%** das demais transações. A descrição do PaySim define o fraudador como quem toma a conta da vítima e tenta esvaziá-la, então esse padrão é em boa parte a regra do simulador.
 
 Essas diferenças são **exploratórias**. Elas não representam a população do PaySim e não demonstram capacidade preditiva.
 
-O diagnóstico registrou **2 origens recorrentes**, **3 contas com entrada e saída** e **25 sequências direcionadas potenciais de duas arestas**. A seleção preservou algumas conexões, mas a rede permaneceu muito esparsa. Esses números não comprovam superioridade em relação a uma amostra aleatória nem garantem caminhos temporalmente válidos.
+O diagnóstico registrou **2 origens recorrentes**, **3 contas com entrada e saída** (em 1.780) e **25 sequências direcionadas potenciais de duas arestas**. A amostragem estrutural **não preservou** a estrutura pretendida — e o motivo está no próprio dataset: no PaySim completo, só 2 contas de cliente enviam mais de uma vez e também recebem. Nenhuma estratégia de amostragem cria uma recorrência que o dado não tem.
 
-O indicador de saldo considera uma origem com saldo inicial positivo que terminou em zero. Ele usa informação posterior à transação: em um modelo destinado a decidir antes de sua conclusão, seu uso representaria risco de vazamento temporal. Aqui, ele é usado apenas na análise retrospectiva da amostra.
+O indicador de saldo considera uma origem com saldo inicial positivo que terminou em zero. Ele usa informação posterior à transação: usá-lo em um classificador que decida antes dela seria vazamento de alvo. Aqui, ele é usado apenas na análise retrospectiva da amostra.
 
 ## Visualizações
 
@@ -130,7 +137,7 @@ A amostra foi construída deliberadamente para preservar fraudes e estruturas in
 - o projeto não treina nem avalia um classificador de fraude;
 - centralidade não deve ser interpretada como evidência de comportamento fraudulento.
 
-A principal conclusão metodológica é que, em redes grandes, **a estratégia de amostragem faz parte do problema analítico**.
+A principal conclusão metodológica é que **a estrutura que a ferramenta pressupõe precisa existir no dado**: antes de modelar um problema como grafo, vale verificar se há recorrência suficiente para isso.
 
 ## Como executar
 
